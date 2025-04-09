@@ -1,0 +1,243 @@
+/* General Reset and Font Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat", "HelveticaNeue", "Helvetica Neue", "Helvetica-Neue",
+    Helvetica, Arial, sans-serif;
+}
+
+/* Navbar Styles */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #1c1d2a;
+  z-index: 1000; /* Ensure it stays above the content */
+}
+
+nav .navbar {
+  max-width: 1250px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+/* Logo Styles */
+nav .navbar .logo img {
+  max-height: 50px; /* Adjust the height */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain;
+  animation: slideLeft 4s ease-in-out infinite; /* Apply animation */
+}
+
+/* Animation for the Logo Image */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0); /* Start at original position */
+  }
+  50% {
+    transform: translateX(-100px); /* Move 100px to the left */
+  }
+  100% {
+    transform: translateX(0); /* Return to original position */
+  }
+}
+
+/* Navigation Menu Styles */
+nav .navbar .nav-links {
+  height: 100%;
+  line-height: 70px;
+}
+
+nav .navbar .nav-links .links {
+  display: flex;
+}
+
+nav .navbar .nav-links .links li {
+  list-style: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+}
+
+/* Nav Link Text Style */
+nav .navbar .nav-links .links li a {
+  text-decoration: none;
+  color: #ffff;
+  white-space: nowrap;
+  font-size: 16px;
+  position: relative;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Underline Effect for Nav Links on Hover */
+nav .navbar .nav-links .links li a:hover {
+  text-decoration: underline;
+  text-decoration-color: #e04b26; /* Underline color matches Contact Us button */
+}
+
+/* Ensure Contact Us button isn't underlined */
+nav .navbar .nav-links .links li button {
+  background-color: #e04b26;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for button hover */
+  text-decoration: none; /* Remove underline from the button */
+}
+
+/* Sub-menu styles */
+nav .navbar .nav-links .links .sub-menu {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  background-color: #1c1d2a;
+  line-height: 40px;
+  border-radius: 0 0 4px 4px;
+  display: none;
+  opacity: 0;
+  width: 100%;
+  color: #fff;
+}
+
+.arrow {
+  color: #fff;
+}
+
+nav .navbar .nav-links .links li.active .sub-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  max-height: 1000px;
+  color: #fff;
+  padding: 10px 0; /* Space between dropdown items */
+  box-sizing: border-box;
+  margin-top: 10px; /* Add some space above the sub-menu */
+}
+
+/* Sub-menu item styles */
+nav .navbar .nav-links .links .sub-menu li {
+  padding: 10px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+  color: #fff;
+}
+
+nav .navbar .nav-links .links .sub-menu li a {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+nav .navbar .nav-links .links .sub-menu li:hover {
+  background-color: #e04b26;
+}
+
+/* Menu icon styles */
+.menu,
+.close {
+  color: #fff;
+  cursor: pointer;
+  font-size: 30px;
+  transition: transform 0.3s ease; /* Smooth transition for menu icon */
+}
+
+/* Media query for responsive behavior */
+@media (max-width: 954px) {
+  nav .navbar {
+    max-width: 100%;
+    padding: 0 25px;
+  }
+
+  nav .navbar .nav-links .links li {
+    padding: 0 10px;
+  }
+
+  nav .navbar .nav-links .links li a {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 800px) {
+  nav .navbar .nav-links {
+    display: none;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 240px;
+    background-color: #1c1d2a;
+    margin-top: 0;
+    padding: 20px 0;
+    z-index: 10;
+    flex-direction: column;
+    line-height: 40px;
+    transition: all 0.3s ease; /* Smooth transition for the mobile menu */
+  }
+
+  nav .navbar .nav-links.open {
+    display: flex;
+  }
+
+  nav .navbar .nav-links .links {
+    display: block;
+    width: 100%;
+  }
+
+  nav .navbar .nav-links .links li {
+    padding: 15px 20px;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav .navbar .nav-links .links li a {
+    width: 100%;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+
+  nav .navbar .nav-links .links li a:hover {
+    background-color: #e04b26;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav .navbar .nav-links .links li button {
+    color: #fff;
+    background-color: transparent;
+    border-radius: 0px;
+  }
+
+  /* Show menu icon on small screens */
+  .menu {
+    display: block;
+  }
+
+  /* Show close icon when the menu is open */
+  .close {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+}
+
+@media (min-width: 801px) {
+  .menu,
+  .close {
+    display: none;
+  }
+}
