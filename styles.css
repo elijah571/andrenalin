@@ -350,19 +350,20 @@ h1 span.animate {
   height: auto;
   overflow: hidden;
   position: relative;
+  bottom: 50px;
 }
 
 .slider {
   display: flex;
-  animation: slide 15s infinite linear; /* Changed to 'linear' to make it smooth */
+  animation: slide 15s infinite linear;
 }
 
 .slider img {
   width: 100%;
   height: auto;
   object-fit: cover;
-  flex-shrink: 0; /* Prevent images from shrinking */
-  transition: opacity 1s ease-in-out; /* Smooth transition for opacity */
+  flex-shrink: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 /* Animation to slide images continuously */
@@ -431,7 +432,7 @@ h1 span.animate {
   }
 
   h1 {
-    font-size: 1.5rem; /* Smaller font size for mobile screens */
+    font-size: 0.8rem; /* Smaller font size for mobile screens */
     margin-bottom: 15px;
   }
 
@@ -447,6 +448,7 @@ h1 span.animate {
     height: 300px; /* Limit image height on smaller screens */
     object-fit: cover;
     border-radius: 0;
+    display: none;
   }
 }
 
@@ -468,8 +470,10 @@ h1 span.animate {
 
   .hero-bg img {
     width: 80%;
+    display: none;
   }
 }
+
 /* Banner Section Styling */
 .banner {
   background-color: #fadfe3;
@@ -497,6 +501,7 @@ h1 span.animate {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1;
 }
 
 /* Box Hover Effect */
@@ -580,7 +585,8 @@ h1 span.animate {
   }
 
   .box-img {
-    width: 80%;
+    width: 50%;
+    display: none;
   }
 
   .box h3 {
@@ -607,8 +613,10 @@ h1 span.animate {
 
   .box-img {
     width: 100%;
+    display: none;
   }
 }
+
 /* Mission Section Styling */
 .mission-and-section {
   display: flex;
@@ -619,6 +627,7 @@ h1 span.animate {
   animation: fadeIn 1.5s ease-in-out;
   background-color: #f9f9f9; /* Light background for contrast */
   border-radius: 10px;
+  margin-top: 140px;
 }
 
 .image-section {
@@ -627,7 +636,6 @@ h1 span.animate {
   opacity: 0;
   animation: slideInFromLeft 1s ease-out forwards;
   border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .image-section img {
@@ -719,7 +727,7 @@ button:focus {
 }
 
 /* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .mission-and-section {
     flex-direction: column;
     align-items: center;
@@ -739,7 +747,11 @@ button:focus {
     flex-direction: column;
     align-items: center;
   }
-
+  .image-section img {
+    width: 100%;
+    height: 400px;
+    margin: 40px 0;
+  }
   .content {
     max-width: 100%;
     margin-bottom: 10px;
@@ -799,4 +811,153 @@ button:focus {
     opacity: 1;
     transform: translateY(0);
   }
+}
+/* Main container for the services section */
+.services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #f4f4f4; /* Light background */
+}
+
+/* Heading section of the services */
+.services-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.services-heading h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.services-heading h2 span hr {
+  border: 1px solid #d05b1b; /* Blue line */
+  width: 10%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+/* Contact button */
+.services-heading .services-heading div button {
+  padding: 10px 20px;
+  background-color: #d05b1b; /* Blue button */
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.services-heading .services-heading div button:hover {
+  background-color: #d05b1b; /* Darker blue on hover */
+}
+
+/* Container for service boxes */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 2rem;
+  transition: all 0.3s ease; /* Add smooth transition for responsiveness */
+}
+
+/* Make it responsive */
+@media (max-width: 1024px) {
+  .services-container {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* 2 items per row for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: 1fr; /* 1 item per row for small screens */
+  }
+}
+
+/* Style for each service box */
+.service-box {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0; /* Make the box invisible initially */
+  animation: fadeInUp 0.6s ease forwards; /* Add fadeIn animation */
+}
+
+/* Animation for service box */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover effect for service box */
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+/* Service icon styling */
+.services svg,
+.services i {
+  fill: #f02259;
+  width: 34px;
+  color: #f02259;
+  font-size: 34px;
+}
+
+/* Service image styling */
+.service-box .img img {
+  width: 34px; /* Fixed width for icons */
+  height: 34px;
+  margin-bottom: 1rem;
+}
+
+/* Heading inside each service box */
+.service-box .heading h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Paragraph inside each service box */
+.service-box .para {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+/* Link for 'All Services' */
+.services div a {
+  text-decoration: none;
+  color: #d05b1b;
+  font-weight: bold;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.services div a:hover {
+  text-decoration: underline;
+}
+
+.services button {
+  margin-top: 50px;
+  padding: 10px 22px;
 }
