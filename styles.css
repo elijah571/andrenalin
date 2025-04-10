@@ -1248,3 +1248,13 @@ small {
     width: 90%;
   }
 }
+/*footer*/
+footer {
+  background-image: url("https://www.descasio.io/wp-content/uploads/2020/10/descasio-footer-fade.png");
+  background-color: #3e4063;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: top right;
+  margin-top: -3px;
+  margin-bottom: 0;
+}
