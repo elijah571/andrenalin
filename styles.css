@@ -13,7 +13,8 @@ header {
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
+  /* Full viewport height */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,9 +31,12 @@ header::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-  z-index: 1; /* Ensure overlay is below text */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black overlay */
+  z-index: 1;
+  /* Ensure overlay is below text */
 }
+
 /* Navbar Styles */
 nav {
   position: fixed;
@@ -41,7 +45,8 @@ nav {
   width: 100%;
   height: 70px;
   background-color: #1c1d2a;
-  z-index: 1000; /* Ensure it stays above the content */
+  z-index: 1000;
+  /* Ensure it stays above the content */
 }
 
 nav .navbar {
@@ -56,22 +61,30 @@ nav .navbar {
 
 /* Logo Styles */
 nav .navbar .logo img {
-  max-height: 50px; /* Adjust the height */
-  width: auto; /* Maintain aspect ratio */
+  max-height: 50px;
+  /* Adjust the height */
+  width: auto;
+  /* Maintain aspect ratio */
   object-fit: contain;
-  animation: slideLeft 4s ease-in-out infinite; /* Apply animation */
+  animation: slideLeft 4s ease-in-out infinite;
+  /* Apply animation */
 }
 
 /* Animation for the Logo Image */
 @keyframes slideLeft {
   0% {
-    transform: translateX(0); /* Start at original position */
+    transform: translateX(0);
+    /* Start at original position */
   }
+
   50% {
-    transform: translateX(-100px); /* Move 100px to the left */
+    transform: translateX(-100px);
+    /* Move 100px to the left */
   }
+
   100% {
-    transform: translateX(0); /* Return to original position */
+    transform: translateX(0);
+    /* Return to original position */
   }
 }
 
@@ -100,13 +113,15 @@ nav .navbar .nav-links .links li a {
   white-space: nowrap;
   font-size: 16px;
   position: relative;
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  transition: all 0.3s ease;
+  /* Smooth transition for hover effects */
 }
 
 /* Underline Effect for Nav Links on Hover */
 nav .navbar .nav-links .links li a:hover {
   text-decoration: underline;
-  text-decoration-color: #e04b26; /* Underline color matches Contact Us button */
+  text-decoration-color: #e04b26;
+  /* Underline color matches Contact Us button */
 }
 
 /* Ensure Contact Us button isn't underlined */
@@ -119,8 +134,10 @@ nav .navbar .nav-links .links li button {
   font-weight: 600;
   border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for button hover */
-  text-decoration: none; /* Remove underline from the button */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  /* Smooth transition for button hover */
+  text-decoration: none;
+  /* Remove underline from the button */
 }
 
 /* Sub-menu styles */
@@ -147,9 +164,11 @@ nav .navbar .nav-links .links li.active .sub-menu {
   visibility: visible;
   max-height: 1000px;
   color: #fff;
-  padding: 10px 0; /* Space between dropdown items */
+  padding: 10px 0;
+  /* Space between dropdown items */
   box-sizing: border-box;
-  margin-top: 10px; /* Add some space above the sub-menu */
+  margin-top: 10px;
+  /* Add some space above the sub-menu */
 }
 
 /* Sub-menu item styles */
@@ -176,7 +195,8 @@ nav .navbar .nav-links .links .sub-menu li:hover {
   color: #fff;
   cursor: pointer;
   font-size: 30px;
-  transition: transform 0.3s ease; /* Smooth transition for menu icon */
+  transition: transform 0.3s ease;
+  /* Smooth transition for menu icon */
 }
 
 /* Media query for responsive behavior */
@@ -208,7 +228,8 @@ nav .navbar .nav-links .links .sub-menu li:hover {
     z-index: 10;
     flex-direction: column;
     line-height: 40px;
-    transition: all 0.3s ease; /* Smooth transition for the mobile menu */
+    transition: all 0.3s ease;
+    /* Smooth transition for the mobile menu */
   }
 
   nav .navbar .nav-links.open {
@@ -278,8 +299,10 @@ nav .navbar .nav-links .links .sub-menu li:hover {
   width: 100%;
   max-width: 1200px;
   margin: auto;
-  padding: 10 20px; /* Added padding for small screens */
-  gap: 20px; /* Add spacing between text and image */
+  padding: 10 20px;
+  /* Added padding for small screens */
+  gap: 20px;
+  /* Add spacing between text and image */
 }
 
 .text {
@@ -287,30 +310,37 @@ nav .navbar .nav-links .links .sub-menu li:hover {
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align text to the left by default */
+  align-items: flex-start;
+  /* Align text to the left by default */
   gap: 20px;
-  text-align: left; /* Default text alignment */
+  text-align: left;
+  /* Default text alignment */
 }
 
 hr {
   margin-top: 10px;
   background-color: #e04b26;
-  width: 60px; /* Shorten hr to match the text */
+  width: 60px;
+  /* Shorten hr to match the text */
   border: none;
   height: 3px;
 }
 
 h1 {
-  font-size: 3rem; /* Increase base font size for the heading */
+  font-size: 2rem;
+  /* Increase base font size for the heading */
   line-height: 1.2;
   margin-bottom: 20px;
-  letter-spacing: -0.5px; /* Tighten letter-spacing for a more polished look */
+  letter-spacing: -0.5px;
+  /* Tighten letter-spacing for a more polished look */
 }
 
 h1 span.animate {
   font-weight: bold;
-  font-size: 3.2rem; /* Slightly larger font size for "Solutions" */
-  text-transform: uppercase; /* Make it look bolder */
+  font-size: 3.2rem;
+  /* Slightly larger font size for "Solutions" */
+  text-transform: uppercase;
+  /* Make it look bolder */
 }
 
 /* Hero Button Styling */
@@ -326,12 +356,15 @@ h1 span.animate {
   text-align: center;
   width: auto;
   margin-top: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
 }
 
 .hero-button:hover {
-  background-color: #d05b1b; /* Darker shade on hover */
-  transform: scale(1.05); /* Slightly enlarge the button on hover */
+  background-color: #d05b1b;
+  /* Darker shade on hover */
+  transform: scale(1.05);
+  /* Slightly enlarge the button on hover */
 }
 
 /* Hero Background Image */
@@ -369,22 +402,33 @@ h1 span.animate {
 /* Animation to slide images continuously */
 @keyframes slide {
   0% {
-    transform: translateX(0); /* Start with the first image in place */
+    transform: translateX(0);
+    /* Start with the first image in place */
   }
+
   20% {
-    transform: translateX(-100%); /* Slide to the second image */
+    transform: translateX(-100%);
+    /* Slide to the second image */
   }
+
   40% {
-    transform: translateX(-200%); /* Slide to the third image */
+    transform: translateX(-200%);
+    /* Slide to the third image */
   }
+
   60% {
-    transform: translateX(-300%); /* Slide to the fourth image */
+    transform: translateX(-300%);
+    /* Slide to the fourth image */
   }
+
   80% {
-    transform: translateX(-400%); /* Slide to the fifth image */
+    transform: translateX(-400%);
+    /* Slide to the fifth image */
   }
+
   100% {
-    transform: translateX(-500%); /* Keep going by sliding to the next image */
+    transform: translateX(-500%);
+    /* Keep going by sliding to the next image */
   }
 }
 
@@ -395,9 +439,11 @@ h1 span.animate {
     opacity: 0;
     background-color: transparent;
   }
+
   50% {
     background-color: #e04b26;
   }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -412,14 +458,17 @@ h1 span.animate {
   padding: 5px 10px;
   border-radius: 5px;
   color: white;
-  text-transform: uppercase; /* Add uppercase for bolder look */
+  text-transform: uppercase;
+  /* Add uppercase for bolder look */
 }
 
 /* Responsive Design: Mobile Layout */
 @media (max-width: 768px) {
   .hero {
-    flex-direction: column; /* Stack the content vertically */
-    text-align: center; /* Center text on small screens */
+    flex-direction: column;
+    /* Stack the content vertically */
+    text-align: center;
+    /* Center text on small screens */
     padding: 0 10px;
   }
 
@@ -427,12 +476,15 @@ h1 span.animate {
     max-width: 100%;
     padding: 20px 0;
     margin-top: 80px;
-    text-align: center; /* Center text */
-    align-items: center; /* Center the text content */
+    text-align: center;
+    /* Center text */
+    align-items: center;
+    /* Center the text content */
   }
 
   h1 {
-    font-size: 0.8rem; /* Smaller font size for mobile screens */
+    font-size: 16px;
+    /* Smaller font size for mobile screens */
     margin-bottom: 15px;
   }
 
@@ -445,7 +497,8 @@ h1 span.animate {
 
   .hero-bg img {
     width: 100%;
-    height: 300px; /* Limit image height on smaller screens */
+    height: 300px;
+    /* Limit image height on smaller screens */
     object-fit: cover;
     border-radius: 0;
     display: none;
@@ -506,8 +559,10 @@ h1 span.animate {
 
 /* Box Hover Effect */
 .box:hover {
-  transform: translateY(-10px); /* Slightly lift box on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+  transform: translateY(-10px);
+  /* Slightly lift box on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  /* Stronger shadow on hover */
 }
 
 /* Headings */
@@ -515,7 +570,8 @@ h1 span.animate {
   font-size: 1.8rem;
   color: #333;
   margin-bottom: 15px;
-  font-weight: 600; /* Make the headings bold */
+  font-weight: 600;
+  /* Make the headings bold */
 }
 
 /* Paragraphs */
@@ -523,7 +579,8 @@ h1 span.animate {
   font-size: 1rem;
   color: #666;
   margin-bottom: 20px;
-  line-height: 1.6; /* Improved readability */
+  line-height: 1.6;
+  /* Improved readability */
 }
 
 /* Button Styling */
@@ -539,20 +596,24 @@ h1 span.animate {
 }
 
 .box button:hover {
-  background-color: #d05b1b; /* Darker shade on hover */
-  transform: scale(1.05); /* Slightly enlarge the button */
+  background-color: #d05b1b;
+  /* Darker shade on hover */
+  transform: scale(1.05);
+  /* Slightly enlarge the button */
 }
 
 /* Icon Styling */
 .box i {
   font-size: 1.5rem;
   color: #e04b26;
-  margin-left: 10px; /* Space between button and icon */
+  margin-left: 10px;
+  /* Space between button and icon */
   transition: transform 0.3s ease;
 }
 
 .box i:hover {
-  transform: translateX(5px); /* Move icon on hover */
+  transform: translateX(5px);
+  /* Move icon on hover */
 }
 
 /* Image Box Styling */
@@ -608,7 +669,8 @@ h1 span.animate {
 
 @media (max-width: 768px) {
   .box {
-    width: 100%; /* Make boxes full width on smaller screens */
+    width: 100%;
+    /* Make boxes full width on smaller screens */
   }
 
   .box-img {
@@ -625,7 +687,7 @@ h1 span.animate {
   padding: 30px;
   flex-wrap: wrap;
   animation: fadeIn 1.5s ease-in-out;
-  background-color: #f9f9f9; /* Light background for contrast */
+
   border-radius: 10px;
   margin-top: 140px;
 }
@@ -642,7 +704,8 @@ h1 span.animate {
   width: 100%;
   height: auto;
   border-radius: 8px;
-  object-fit: cover; /* Ensures the image maintains its aspect ratio */
+  object-fit: cover;
+  /* Ensures the image maintains its aspect ratio */
 }
 
 .section-text {
@@ -660,7 +723,8 @@ h1 span.animate {
 .mission-vision-section p {
   font-weight: bold;
   font-size: 1.2rem;
-  color: #333; /* Darker text for readability */
+  color: #333;
+  /* Darker text for readability */
 }
 
 .container-mission {
@@ -668,7 +732,8 @@ h1 span.animate {
   justify-content: space-between;
   margin-top: 20px;
   flex-wrap: wrap;
-  gap: 20px; /* Adds space between items */
+  gap: 20px;
+  /* Adds space between items */
 }
 
 .content {
@@ -678,16 +743,20 @@ h1 span.animate {
   text-align: center;
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Soft shadow for elevation */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  /* Soft shadow for elevation */
   margin-bottom: 20px;
   opacity: 0;
   animation: fadeInUp 1s ease-out forwards;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth hover effect */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  /* Smooth hover effect */
 }
 
 .content:hover {
-  transform: translateY(-5px); /* Lift effect on hover */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  transform: translateY(-5px);
+  /* Lift effect on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  /* Enhanced shadow on hover */
 }
 
 .content i,
@@ -701,7 +770,8 @@ h1 span.animate {
 .content h3 {
   margin: 10px 0;
   font-size: 1.5rem;
-  color: #333; /* Ensure contrast with background */
+  color: #333;
+  /* Ensure contrast with background */
 }
 
 button {
@@ -723,7 +793,8 @@ button:hover {
 
 button:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(208, 91, 27, 0.5); /* Focus style for accessibility */
+  box-shadow: 0 0 0 3px rgba(208, 91, 27, 0.5);
+  /* Focus style for accessibility */
 }
 
 /* Responsive Design for Smaller Screens */
@@ -747,11 +818,13 @@ button:focus {
     flex-direction: column;
     align-items: center;
   }
+
   .image-section img {
     width: 100%;
     height: 400px;
     margin: 40px 0;
   }
+
   .content {
     max-width: 100%;
     margin-bottom: 10px;
@@ -772,6 +845,7 @@ button:focus {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -783,6 +857,7 @@ button:focus {
     transform: translateX(-100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -795,6 +870,7 @@ button:focus {
     transform: translateX(100%);
     opacity: 0;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -807,11 +883,13 @@ button:focus {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 /* Main container for the services section */
 .services {
   display: flex;
@@ -819,7 +897,6 @@ button:focus {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background-color: #f4f4f4; /* Light background */
 }
 
 /* Heading section of the services */
@@ -835,7 +912,8 @@ button:focus {
 }
 
 .services-heading h2 span hr {
-  border: 1px solid #d05b1b; /* Blue line */
+  border: 1px solid #d05b1b;
+  /* Blue line */
   width: 10%;
   margin: auto;
   margin-top: 20px;
@@ -844,7 +922,8 @@ button:focus {
 /* Contact button */
 .services-heading .services-heading div button {
   padding: 10px 20px;
-  background-color: #d05b1b; /* Blue button */
+  background-color: #d05b1b;
+  /* Blue button */
   color: white;
   border: none;
   font-size: 1rem;
@@ -854,33 +933,35 @@ button:focus {
 }
 
 .services-heading .services-heading div button:hover {
-  background-color: #d05b1b; /* Darker blue on hover */
+  background-color: #d05b1b;
+  /* Darker blue on hover */
 }
 
 /* Container for service boxes */
 .services-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+  grid-template-columns: repeat(3, 1fr);
+  /* 3 items per row */
   gap: 20px;
   max-width: 1200px;
   width: 100%;
   margin-top: 2rem;
-  transition: all 0.3s ease; /* Add smooth transition for responsiveness */
+  transition: all 0.3s ease;
+  /* Add smooth transition for responsiveness */
 }
 
 /* Make it responsive */
 @media (max-width: 1024px) {
   .services-container {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* 2 items per row for medium screens */
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 items per row for medium screens */
   }
 }
 
 @media (max-width: 768px) {
   .services-container {
-    grid-template-columns: 1fr; /* 1 item per row for small screens */
+    grid-template-columns: 1fr;
+    /* 1 item per row for small screens */
   }
 }
 
@@ -889,11 +970,14 @@ button:focus {
   background-color: white;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  /* Light shadow */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0; /* Make the box invisible initially */
-  animation: fadeInUp 0.6s ease forwards; /* Add fadeIn animation */
+  opacity: 0;
+  /* Make the box invisible initially */
+  animation: fadeInUp 0.6s ease forwards;
+  /* Add fadeIn animation */
 }
 
 /* Animation for service box */
@@ -902,6 +986,7 @@ button:focus {
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -911,7 +996,8 @@ button:focus {
 /* Hover effect for service box */
 .service-box:hover {
   transform: translateY(-10px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  /* Shadow on hover */
 }
 
 /* Service icon styling */
@@ -925,7 +1011,8 @@ button:focus {
 
 /* Service image styling */
 .service-box .img img {
-  width: 34px; /* Fixed width for icons */
+  width: 34px;
+  /* Fixed width for icons */
   height: 34px;
   margin-bottom: 1rem;
 }
@@ -958,6 +1045,206 @@ button:focus {
 }
 
 .services button {
-  margin-top: 50px;
+  margin-top: 10px;
+  margin-bottom: 60px;
   padding: 10px 22px;
+}
+
+/* testionia */
+.testimonias {
+  padding: 40px 0;
+  text-align: center;
+  width: 100%;
+  background-color: #001f54;
+}
+
+.testimonia-container {
+  display: flex;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
+  gap: 20px;
+}
+
+.testimonia-box {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  animation: slideInOut 10s ease-in-out infinite;
+  /* Animation applied */
+}
+
+.box-para {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+@keyframes slideInOut {
+  0% {
+    transform: translateX(-100%);
+    /* Slide in from the left */
+  }
+
+  50% {
+    transform: translateX(0);
+    /* Fully in place */
+  }
+
+  100% {
+    transform: translateX(100%);
+    /* Slide out to the right */
+  }
+}
+
+.box-para p {
+  margin-bottom: 30px;
+}
+
+.img-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.img-container img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #ffff;
+}
+
+small {
+  display: block;
+  font-size: 14px;
+  color: #666;
+}
+
+/* media query to remove animation on small screens */
+@media (max-width: 768px) {
+  .testimonia-container {
+    flex-wrap: wrap;
+  }
+
+  .testimonia-box {
+    animation: none;
+    /* Disable animation on small screens */
+  }
+}
+
+/*
+.value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.value .value-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #666;
+}
+
+.value-container {
+  max-width: 80%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-around;
+  border-radius: 22px;
+
+  background: linear-gradient(135deg, rgb(12, 12, 90) 0%);
+}
+
+.value-container .value-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #e04b26;
+} */
+/* General container */
+.value {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Heading section */
+.value-heading {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.value-heading h2 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+
+.value-heading p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Container for values */
+.value-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Individual value box */
+.value-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.value-box h2 {
+  font-size: 1.5rem;
+  color: #0077cc;
+  margin-bottom: 15px;
+}
+
+.value-box p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .value-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .value-box {
+    width: 90%;
+  }
 }
