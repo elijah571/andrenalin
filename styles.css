@@ -3,8 +3,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", "HelveticaNeue", "Helvetica Neue", "Helvetica-Neue",
-    Helvetica, Arial, sans-serif;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Hw0aXpsog.woff2)
+    format("woff2");
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
 }
 
 /* Header Styling */
@@ -1181,7 +1186,7 @@ small {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   padding: 60px 20px;
   background-color: #f9f9f9;
-  color: #333;
+  color: #2b2d42;
 }
 
 /* Heading section */
@@ -1248,13 +1253,175 @@ small {
     width: 90%;
   }
 }
+
 /*footer*/
+
 footer {
+  background-color: #1a1a1a;
+  width: 100%;
   background-image: url("https://www.descasio.io/wp-content/uploads/2020/10/descasio-footer-fade.png");
-  background-color: #3e4063;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: top right;
-  margin-top: -3px;
-  margin-bottom: 0;
+  padding-top: 40px;
+}
+/* Base Footer Styles */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 100%;
+  margin: 50px auto;
+  padding: 30px 20px;
+
+  color: #ccc;
+
+  animation: fadeIn 1.2s ease-in-out;
+
+  border-radius: 8px 8px 0 0;
+}
+
+.left-footer,
+.footer-contact,
+.useful-links {
+  flex: 1 1 300px;
+  margin-bottom: 20px;
+  animation: slideUp 0.8s ease-in-out;
+}
+
+.left-footer .img img {
+  width: 200px;
+  height: auto;
+}
+
+.para-div p {
+  margin-top: 15px;
+  line-height: 1.6;
+  max-width: 300px;
+  font-size: 15px;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  padding-bottom: 5px;
+
+  color: #fff;
+}
+
+/* Link Styling */
+ul {
+  list-style: none;
+  padding: 10px 0;
+}
+footer ul li {
+  position: relative;
+  padding: 10px 0;
+}
+
+footer ul li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%; /* Change this value as needed */
+  border-bottom: 1px solid #d05b1b;
+}
+
+ul li a {
+  color: #ccc;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -2px;
+  background-color: #d05b1b;
+  transition: width 0.3s ease;
+}
+
+ul li a:hover {
+  color: #fff;
+}
+
+ul li a:hover::after {
+  width: 100%;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background-color: #1c1d2a;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px 20px;
+  align-items: center;
+  animation: fadeIn 1.5s ease;
+}
+
+.copy-right p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #aaa;
+}
+
+.socials a {
+  margin-right: 15px;
+  font-size: 30px;
+  color: #ccc;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #d05b1b;
+  transform: scale(1.1) rotate(15deg);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .footer-container,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .socials {
+    margin-top: 10px;
+  }
 }
