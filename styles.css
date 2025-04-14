@@ -122,13 +122,6 @@ nav .navbar .nav-links .links li a {
   /* Smooth transition for hover effects */
 }
 
-/* Underline Effect for Nav Links on Hover */
-nav .navbar .nav-links .links li a:hover {
-  text-decoration: underline;
-  text-decoration-color: #e04b26;
-  /* Underline color matches Contact Us button */
-}
-
 /* Ensure Contact Us button isn't underlined */
 nav .navbar .nav-links .links li button {
   background-color: #e04b26;
@@ -148,7 +141,7 @@ nav .navbar .nav-links .links li button {
 /* Sub-menu styles */
 nav .navbar .nav-links .links .sub-menu {
   position: absolute;
-  top: 70px;
+  top: 50px;
   left: 0;
   background-color: #1c1d2a;
   line-height: 40px;
@@ -157,6 +150,7 @@ nav .navbar .nav-links .links .sub-menu {
   opacity: 0;
   width: 100%;
   color: #fff;
+  z-index: 100;
 }
 
 .arrow {
@@ -342,7 +336,7 @@ h1 {
 
 h1 span.animate {
   font-weight: bold;
-  font-size: 3.2rem;
+  font-size: 2rem;
   /* Slightly larger font size for "Solutions" */
   text-transform: uppercase;
   /* Make it look bolder */
@@ -533,156 +527,6 @@ h1 span.animate {
 }
 
 /* Banner Section Styling */
-.banner {
-  background-color: #fadfe3;
-  width: 90%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 40px 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  height: 400px;
-}
-
-/* Box Styling */
-.box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #fff;
-  width: 30%;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1;
-}
-
-/* Box Hover Effect */
-.box:hover {
-  transform: translateY(-10px);
-  /* Slightly lift box on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  /* Stronger shadow on hover */
-}
-
-/* Headings */
-.box h3 {
-  font-size: 1.8rem;
-  color: #333;
-  margin-bottom: 15px;
-  font-weight: 600;
-  /* Make the headings bold */
-}
-
-/* Paragraphs */
-.box p {
-  font-size: 1rem;
-  color: #666;
-  margin-bottom: 20px;
-  line-height: 1.6;
-  /* Improved readability */
-}
-
-/* Button Styling */
-.box button {
-  background-color: #e04b26;
-  color: white;
-  font-size: 1rem;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.box button:hover {
-  background-color: #d05b1b;
-  /* Darker shade on hover */
-  transform: scale(1.05);
-  /* Slightly enlarge the button */
-}
-
-/* Icon Styling */
-.box i {
-  font-size: 1.5rem;
-  color: #e04b26;
-  margin-left: 10px;
-  /* Space between button and icon */
-  transition: transform 0.3s ease;
-}
-
-.box i:hover {
-  transform: translateX(5px);
-  /* Move icon on hover */
-}
-
-/* Image Box Styling */
-.box-img {
-  width: 330px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.box-img img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-/* Responsive Design for Mobile and Tablet */
-@media (max-width: 1024px) {
-  .banner {
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-  }
-
-  .box {
-    width: 80%;
-  }
-
-  .box-img {
-    width: 50%;
-    display: none;
-  }
-
-  .box h3 {
-    font-size: 1.5rem;
-  }
-
-  .box p {
-    font-size: 0.9rem;
-  }
-
-  .box button {
-    padding: 10px 20px;
-  }
-
-  .box i {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .box {
-    width: 100%;
-    /* Make boxes full width on smaller screens */
-  }
-
-  .box-img {
-    width: 100%;
-    display: none;
-  }
-}
 
 /* Mission Section Styling */
 .mission-and-section {
@@ -895,7 +739,6 @@ button:focus {
     transform: translateY(0);
   }
 }
-
 /* Main container for the services section */
 .services {
   display: flex;
@@ -919,7 +762,7 @@ button:focus {
 
 .services-heading h2 span hr {
   border: 1px solid #d05b1b;
-  /* Blue line */
+  /* Orange line */
   width: 10%;
   margin: auto;
   margin-top: 20px;
@@ -929,7 +772,7 @@ button:focus {
 .services-heading .services-heading div button {
   padding: 10px 20px;
   background-color: #d05b1b;
-  /* Blue button */
+  /* Orange button */
   color: white;
   border: none;
   font-size: 1rem;
@@ -939,15 +782,14 @@ button:focus {
 }
 
 .services-heading .services-heading div button:hover {
-  background-color: #d05b1b;
-  /* Darker blue on hover */
+  background-color: #b0420a;
+  /* Darker orange on hover */
 }
 
 /* Container for service boxes */
 .services-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* 3 items per row */
   gap: 20px;
   max-width: 1200px;
   width: 100%;
@@ -971,13 +813,11 @@ button:focus {
   }
 }
 
-/* Style for each service box */
 .service-box {
   background-color: white;
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  /* Light shadow */
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   opacity: 0;
@@ -1005,22 +845,15 @@ button:focus {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
   /* Shadow on hover */
 }
-
-/* Service icon styling */
-.services svg,
-.services i {
-  fill: #f02259;
-  width: 34px;
-  color: #f02259;
-  font-size: 34px;
+/* Image Styling */
+.service-box .img img {
+  width: 60px;
 }
 
-/* Service image styling */
-.service-box .img img {
-  width: 34px;
-  /* Fixed width for icons */
-  height: 34px;
-  margin-bottom: 1rem;
+/* Smooth zoom-in effect for images */
+.service-box .img img:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
 }
 
 /* Heading inside each service box */
@@ -1030,17 +863,10 @@ button:focus {
   margin-bottom: 1rem;
 }
 
-/* Paragraph inside each service box */
-.service-box .para {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 1.5rem;
-}
-
 /* Link for 'All Services' */
-.services div a {
+.services p {
   text-decoration: none;
-  color: #d05b1b;
+  color: #03122c;
   font-weight: bold;
   margin-top: 2rem;
   font-size: 1rem;
@@ -1145,12 +971,49 @@ small {
 /* media query to remove animation on small screens */
 @media (max-width: 768px) {
   .testimonia-container {
-    flex-wrap: wrap;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
   }
 
   .testimonia-box {
-    animation: none;
-    /* Disable animation on small screens */
+    min-width: 100%;
+    flex: 0 0 100%;
+    animation: slideShow 15s infinite;
+  }
+
+  .testimonia-container .testimonia-box:nth-child(2) {
+    animation-delay: 15s;
+  }
+
+  .testimonia-container .testimonia-box:nth-child(3) {
+    animation-delay: 10s;
+  }
+
+  @keyframes slideShow {
+    100% {
+      transform: translateX(-100%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 1;
+    }
   }
 }
 
