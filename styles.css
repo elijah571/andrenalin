@@ -115,8 +115,7 @@ nav .navbar .nav-links .links li {
 nav .navbar .nav-links .links li a {
   text-decoration: none;
   color: #ffff;
-  white-space: nowrap;
-  font-size: 16px;
+  font-size: 14px;
   position: relative;
   transition: all 0.3s ease;
   /* Smooth transition for hover effects */
@@ -142,10 +141,9 @@ nav .navbar .nav-links .links li button {
 nav .navbar .nav-links .links .sub-menu {
   position: absolute;
   top: 50px;
-
+  left: 0;
   background-color: #1c1d2a;
-  /* line-height: 20px; */
-  /* padding: 10px 100px; */
+  line-height: 20px;
   border-radius: 0 0 4px 4px;
   display: none;
   opacity: 0;
@@ -162,19 +160,19 @@ nav .navbar .nav-links .links li.active .sub-menu {
   display: block;
   opacity: 1;
   visibility: visible;
+  max-height: 1000px;
   color: #fff;
-  padding: 10px 130px;
+  padding: 10px 0;
   /* Space between dropdown items */
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
   margin-top: 10px;
   /* Add some space above the sub-menu */
 }
 
 /* Sub-menu item styles */
 nav .navbar .nav-links .links .sub-menu li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 10px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: background-color 0.3s ease;
   color: #fff;
 }
@@ -182,11 +180,11 @@ nav .navbar .nav-links .links .sub-menu li {
 nav .navbar .nav-links .links .sub-menu li a {
   color: #fff;
   font-size: 15px;
-  font-weight: 100;
+  font-weight: 500;
 }
 
-nav .navbar .nav-links .links .sub-menu li a:hover {
-  text-decoration: underline;
+nav .navbar .nav-links .links .sub-menu li:hover {
+  background-color: #e04b26;
 }
 
 /* Menu icon styles */
@@ -1273,6 +1271,7 @@ small {
 
   /* still keeping button sizes fixed */
 }
+
 /* Footer */
 footer {
   width: 100%;
