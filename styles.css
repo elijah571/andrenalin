@@ -66,7 +66,7 @@ nav .navbar {
 
 /* Logo Styles */
 nav .navbar .logo img {
-  max-height: 50px;
+  max-height: 75px;
   /* Adjust the height */
   width: auto;
   /* Maintain aspect ratio */
@@ -366,36 +366,40 @@ h1 span.animate {
 }
 
 /* Hero Background Image */
+.hero-bg {
+  width: 100%;
+  height: fit-content; /* or whatever height looks good */
+  overflow: hidden;
+  position: relative;
+  bottom: 50px;
+  margin-top: 20px;
+}
+
 .hero-bg img {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
+  width: 100%;
+  /* height: 100px; */
+  object-fit: cover; /* fills container nicely */
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
 /* Hero Section Background for Slider */
-.hero-bg {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-  position: relative;
-  bottom: 50px;
-}
 
 .slider {
   display: flex;
   animation: slide 15s infinite linear;
 }
 
-.slider img {
+/* .slider img {
   width: 100%;
-  height: auto;
+  height: 400px;
   object-fit: cover;
+  padding: 10px;
+
   flex-shrink: 0;
   transition: opacity 1s ease-in-out;
-}
+} */
 
 /* Animation to slide images continuously */
 @keyframes slide {
@@ -526,22 +530,23 @@ h1 span.animate {
 }
 
 /* Banner Section Styling */
-
 /* Mission Section Styling */
 .mission-and-section {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 30px;
   flex-wrap: wrap;
+  gap: 30px;
+  padding: 30px;
   animation: fadeIn 1.5s ease-in-out;
-
   border-radius: 10px;
   margin-top: 140px;
 }
 
+/* Image Section */
 .image-section {
-  max-width: 400px;
+  flex: 1 1 45%;
+  max-width: 500px;
   margin-right: 20px;
   opacity: 0;
   animation: slideInFromLeft 1s ease-out forwards;
@@ -553,12 +558,12 @@ h1 span.animate {
   height: auto;
   border-radius: 8px;
   object-fit: cover;
-  /* Ensures the image maintains its aspect ratio */
 }
 
+/* Text Section */
 .section-text {
-  flex: 1 1 50%;
-  max-width: 50%;
+  flex: 1 1 45%;
+  max-width: 600px;
   opacity: 0;
   animation: slideInFromRight 1s ease-out forwards;
   padding-left: 20px;
@@ -572,39 +577,33 @@ h1 span.animate {
   font-weight: bold;
   font-size: 1.2rem;
   color: #333;
-  /* Darker text for readability */
 }
 
+/* Content Cards */
 .container-mission {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
   flex-wrap: wrap;
   gap: 20px;
-  /* Adds space between items */
+  margin-top: 20px;
 }
 
 .content {
-  flex: 1 1 45%;
-  max-width: 45%;
+  flex: 1 1 calc(50% - 20px);
   padding: 25px;
   text-align: center;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  /* Soft shadow for elevation */
   margin-bottom: 20px;
   opacity: 0;
   animation: fadeInUp 1s ease-out forwards;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  /* Smooth hover effect */
 }
 
 .content:hover {
   transform: translateY(-5px);
-  /* Lift effect on hover */
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  /* Enhanced shadow on hover */
 }
 
 .content i,
@@ -619,9 +618,9 @@ h1 span.animate {
   margin: 10px 0;
   font-size: 1.5rem;
   color: #333;
-  /* Ensure contrast with background */
 }
 
+/* Button Styling */
 button {
   background-color: #681c0a;
   color: white;
@@ -629,7 +628,6 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  text-align: center;
   font-size: 1rem;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -642,10 +640,13 @@ button:hover {
 button:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(208, 91, 27, 0.5);
-  /* Focus style for accessibility */
 }
 
-/* Responsive Design for Smaller Screens */
+/* ================================
+   Responsive Design Enhancements
+   ================================ */
+
+/* Tablets (<= 900px) */
 @media (max-width: 900px) {
   .mission-and-section {
     flex-direction: column;
@@ -656,229 +657,221 @@ button:focus {
 
   .image-section,
   .section-text {
-    max-width: 100%;
     flex: 1 1 100%;
-    margin-right: 0;
-    margin-bottom: 20px;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
   }
 
-  .container-mission {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .image-section img {
-    width: 100%;
-    height: 400px;
-    margin: 40px 0;
-    display: none;
+  .section-text {
+    padding-top: 20px;
   }
 
   .content {
+    flex: 1 1 100%;
     max-width: 100%;
-    margin-bottom: 10px;
-    padding: 20px;
+  }
+}
+
+/* Mobile (<= 600px) */
+@media (max-width: 600px) {
+  .mission-vision-section p {
+    font-size: 1rem;
+  }
+
+  .content h3 {
+    font-size: 1.3rem;
+  }
+
+  .content {
+    padding: 20px 15px;
   }
 
   button {
     width: 100%;
-    padding: 12px 0;
-    font-size: 1.1rem;
+    padding: 10px;
+    font-size: 0.95rem;
   }
 }
 
-/* Keyframe Animations */
+/* Small Mobile (<= 400px) */
+@media (max-width: 400px) {
+  .mission-and-section {
+    padding: 15px;
+  }
 
-/* Fade-in animation */
+  .content {
+    font-size: 0.95rem;
+  }
+
+  .content h3 {
+    font-size: 1.1rem;
+  }
+
+  .content i,
+  .content svg {
+    font-size: 35px;
+  }
+}
+
+/* ================================
+   Animations (already present)
+   ================================ */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
 }
 
-/* Slide-in from left animation */
 @keyframes slideInFromLeft {
   from {
     transform: translateX(-100%);
     opacity: 0;
   }
-
   to {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
-/* Slide-in from right animation */
 @keyframes slideInFromRight {
   from {
     transform: translateX(100%);
     opacity: 0;
   }
-
   to {
     transform: translateX(0);
     opacity: 1;
   }
 }
 
-/* Fade-in-up animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(20px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 /* Main container for the services section */
+
+/* Services Section */
 .services {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  color: #1d3557;
+  margin-bottom: 10px;
+}
+
+.services hr {
+  width: 80px;
+  border: 2px solid #457b9d;
+  margin: 0 auto 30px;
+}
+
+.services > p {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Grid container for service boxes */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual service box */
+.service-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
-
-/* Heading section of the services */
-.services-heading {
   text-align: center;
-  margin-bottom: 2rem;
 }
 
-.services-heading h2 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.services-heading h2 span hr {
-  border: 1px solid #681c0a;
-  /* Orange line */
-  width: 10%;
-  margin: auto;
-  margin-top: 20px;
-}
-
-/* Contact button */
-.services-heading .services-heading div button {
-  padding: 10px 20px;
-  background-color: #681c0a;
-  /* Orange button */
-  color: white;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-}
-
-.services-heading .services-heading div button:hover {
-  background-color: #681c0a;
-  /* Darker orange on hover */
-}
-
-/* Container for service boxes */
-.services-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 1200px;
-  width: 100%;
-  margin-top: 2rem;
-  transition: all 0.3s ease;
-  /* Add smooth transition for responsiveness */
-}
-
-/* Make it responsive */
-@media (max-width: 1024px) {
-  .services-container {
-    grid-template-columns: repeat(2, 1fr);
-    /* 2 items per row for medium screens */
-  }
-}
-
-@media (max-width: 768px) {
-  .services-container {
-    grid-template-columns: 1fr;
-    /* 1 item per row for small screens */
-  }
-}
-
-.service-box {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  /* Make the box invisible initially */
-  animation: fadeInUp 0.6s ease forwards;
-  /* Add fadeIn animation */
-}
-
-/* Animation for service box */
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Hover effect for service box */
 .service-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  /* Shadow on hover */
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
 }
-/* Image Styling */
+
+/* Image styling */
+.service-box .img {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
 .service-box .img img {
-  width: 60px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
-/* Smooth zoom-in effect for images */
-.service-box .img img:hover {
-  transform: scale(1.1);
-  opacity: 0.9;
+/* Heading & Paragraph */
+.service-box .heading {
+  padding: 15px;
+  background-color: #f7f9fa;
+  width: 100%;
 }
 
-/* Heading inside each service box */
 .service-box .heading h3 {
-  font-size: 1.5rem;
-  color: #333;
-  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: #1d3557;
+  margin: 0;
 }
 
-/* Link for 'All Services' */
-.services p {
-  text-decoration: none;
-  color: #03122c;
-  font-weight: bold;
-  margin-top: 2rem;
-  font-size: 1rem;
+.service-box .para {
+  padding: 20px;
+  font-size: 0.95rem;
+  color: #444;
 }
 
-.services div a:hover {
-  text-decoration: underline;
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .services h2 {
+    font-size: 2rem;
+  }
+
+  .services > p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
 }
 
-.services button {
-  margin-top: 10px;
-  margin-bottom: 60px;
-  padding: 10px 22px;
+@media (max-width: 480px) {
+  .service-box .heading h3 {
+    font-size: 1.1rem;
+  }
+
+  .service-box .para {
+    font-size: 0.9rem;
+  }
 }
 
 /* testionia */
@@ -1023,6 +1016,7 @@ small {
 .value h2 {
   margin-bottom: 10px;
   color: #333;
+  text-align: center;
 }
 .value-container {
   background-color: #0b2046;
@@ -1051,6 +1045,7 @@ small {
   flex-direction: column;
   gap: 15px;
   color: #fff;
+  text-align: center;
 }
 .value-content .value-prara {
   padding: 40px 0;
